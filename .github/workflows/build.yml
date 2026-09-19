@@ -28,7 +28,7 @@ jobs:
         run: |
           find . -name settings.gradle -o -name settings.gradle.kts
             - name: Build AAB
-        run: |
+        -run: |
           SETTINGS=$(find . -name settings.gradle -o -name settings.gradle.kts | head -n 1)
       
           cd "$(dirname "$SETTINGS")"
