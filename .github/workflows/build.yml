@@ -24,13 +24,12 @@ jobs:
         uses: gradle/actions/setup-gradle@v6
         with:
           gradle-version: '8.10'
-
       - name: Find Gradle project
         run: |
-          find project -name settings.gradle -o -name settings.gradle.kts
-
-      - name: Build AAB
+          find . -name settings.gradle -o -name settings.gradle.kts
+            - name: Build AAB
         run: |
-          SETTINGS=$(find project -name settings.gradle -o -name settings.gradle.kts | head -n 1)
+          SETTINGS=$(find . -name settings.gradle -o -name settings.gradle.kts | head -n 1)
+      
           cd "$(dirname "$SETTINGS")"
           gradle bundleRelease
