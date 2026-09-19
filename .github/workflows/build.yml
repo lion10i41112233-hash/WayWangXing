@@ -1,3 +1,19 @@
+name: Build Android AAB
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
